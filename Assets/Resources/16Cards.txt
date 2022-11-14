@@ -1,0 +1,16 @@
+RRHH	0,2	-0,1	0	0	-0,1	0,1	0	0	Deberiamos invertir mas en el bienestar de nuestros trabajadores	¡Estoy de acuerdo!	Ya se las apañan
+RRHH	0,1	0	0,1	0	-0,1	0	0,1	0	Creo que a la empresa le importa mas el cliente que el trabajador	Claro	No es así
+RRHH	0,1	-0,2	0	0,2	-0,1	0,1	0	-0,2	Se dice que que no se recicla debidamente	Vamos a demostrar que se equivocan	Que hablen
+RRHH	0,2	-0,1	-0,1	0	-0,2	0,1	0,1	0	El equipo esta muy fatigado, deberiamos reducir la intensidad	Me parece bien	Aguantarán
+PRODUCT	-0,2	0,2	0	0	0,2	-0,2	0	0	Necesitamos aumentar la jornada a 10h si queremos llegar a entregar el producto	Esto es tu problema	Que se terminen las tareas
+FINANZAS	0	0,1	-0,2	0	0	-0,1	0	0	Si continuamos sin subir los precios, vamos a empezar a tener pérdidas	¡Subid los precios!	Los dejaremos a ver que pasa
+PRODUCT	-0,1	0,1	0	-0,1	0	-0,2	-0,1	0,1	Si no abrimos un servidor de refuerzo, tendremos importantes pérdidas	Solicita uno	Nos la jugaremos
+FINANZAS	-0,1	0,2	0	-0,1	0,1	0,1	0	0,1	Las ventas van muy bien, que debemos hacer con el superhábito?	¡Fiesta en yates!	Retiro a la montaña
+JUNTA	0	0,2	-0,2	0	0	-0,1	0,1	0	Hemos pensado en poner un modelo de negocio mas agresivo	Okey	No lo apoyo
+PRODUCT	0	0,1	-0,2	0	0	-0,2	0,1	0	Hay clientes que aprovechan un bug de la aplicación para lucrarse.	Banead las cuentas	Invertid en ciberseguridad
+MARKETING	0	0,1	-0,1	-0,1	0	-0,1	0,2	-0,1	Vamos a hacer carteles publicitarios para fomentar la imagen corporativa	Lo importante es el producto	Lo importante es el cliente
+JUNTA	-0,2	0,2	0,1	0	0,1	-0,2	-0,2	0	O empezamos a echar gente o tendremos que hacer un parón para reorganizar la empresa	Debemos despedir a gente	Vamos a hacer algunos cambios
+FINANZAS	-0,1	0	0	0,2	-0,1	0	0	-0,2	Nos suben el impuesto para el medioambiente, tendriamos que hacer recortes	Pues adelante	…y si nos lo saltamos?
+ADMIN	-0,2	0	0	0,1	0,2	0	0	-0,2	Hay personas que se quejan que en las oficinas hace mucho calor en verano	Que se quejen	Invertiremos en aires acondicionados
+ADMIN	0,2	-0,2	0	-0,1	-0,2	0,1	0	0,2	Estaria bien que parte de los ingresos que tenemos fueran destinados al transporte privado del personal	Una gran idea	Una pésima idea
+ADMIN	0,2	-0,1	0	-0,2	-0,1	-0,2	0	0,2	Tenemos que gastar la nueva subvención que nos han dado.	Inviente en el bienestar del equipo	Invierte en rebajar la huella ecológica
