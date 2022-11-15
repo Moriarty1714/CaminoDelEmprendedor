@@ -6,13 +6,14 @@ public static class SMARTUPMemory
 {
     public static string userID;
     public static string userName;
-    public static string sesionCode;
+    public static string email;
+    public static string business;
 
-    public static string SMARTObjChoosed = "";
+    //Métricas
+    public static float [] powers = new float [4];
 
-    //Answer
-    public static bool pIsCompleted = false;
-    public static string pWhy = "";
+    public static int totalCards = 0;
+    public static int cardCount = 0;
 
     //Desicions
     //public static Queue<CardAndDesicion> desicions = new Queue<CardAndDesicion>();

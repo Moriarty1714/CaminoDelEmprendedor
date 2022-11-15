@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Stack<Card> cards;
     private HandleCSVFile reader = new HandleCSVFile();
 
-    public TextMeshProUGUI SMARTObj;
-
     GameObject actualCardGO;
     CardLogic actualCardCL;
 
@@ -28,8 +26,6 @@ public class GameManager : MonoBehaviour
     bool endGame;
     void Start()
     {
-        SMARTObj.text = SMARTUPMemory.SMARTObjChoosed;
-
         endGame = false;
         cards = new Stack<Card>();
         reader.ReadFile();
@@ -62,8 +58,7 @@ public class GameManager : MonoBehaviour
                     {
                         UpdateAgents();
 
-                        //GetAnswer
-                        //SMARTUPMemory.desicions.Enqueue(new CardAndDesicion(false, getSlidersValue(), actualCardCL.card.GetManager(), actualCardCL.card.sentence, actualCardCL.card.GetRightDesicion()));
+                        SMARTUPMemory.cardCount++;
                         Destroy(actualCardGO);
                     }
                 }
@@ -75,8 +70,7 @@ public class GameManager : MonoBehaviour
                     {
                         UpdateAgents(true);
 
-                        //GetAnswer
-                        //SMARTUPMemory.desicions.Enqueue(new CardAndDesicion(true, getSlidersValue(), actualCardCL.card.GetManager(), actualCardCL.card.sentence, actualCardCL.card.GetLeftDesicion()));
+                        SMARTUPMemory.cardCount++;
                         Destroy(actualCardGO);
                     }
                 }
@@ -89,7 +83,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Avaluation");
+            SMARTUPMemory.powers = getSlidersValue();
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -148,9 +143,9 @@ public class GameManager : MonoBehaviour
             managersImg[(int)tmpManager], tmpManager,
             (string)reader.cardsInfo[i].GetValue(9),
             (string)reader.cardsInfo[i].GetValue(10), (string)reader.cardsInfo[i].GetValue(11)));
-
-
         }
+
+        SMARTUPMemory.totalCards = cards.Count;
     }
 
     Affection getAffectionFromReader(string s)

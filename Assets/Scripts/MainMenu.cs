@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI nameUser;
-    public TextMeshProUGUI codeSession;
+    public TextMeshProUGUI email;
+    public TextMeshProUGUI business;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,18 @@ public class MainMenu : MonoBehaviour
         else
             SMARTUPMemory.userName = "Unknowed";
 
-        if (codeSession.text.ToString().Length != 1)
-            SMARTUPMemory.sesionCode = codeSession.text;
+        if (email.text.ToString().Length != 1)
+            SMARTUPMemory.email = email.text;
         else
-            SMARTUPMemory.sesionCode = "-1";
+            SMARTUPMemory.email = "unknowed@unknowed.com";
+
+        if (business.text.ToString().Length != 1)
+            SMARTUPMemory.business = business.text;
+        else
+            SMARTUPMemory.business = "UnknowedSL";
+    }
+
+    public void sceneGame() {
+        SceneManager.LoadScene("Game");
     }
 }
