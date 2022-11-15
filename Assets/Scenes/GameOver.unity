@@ -653,6 +653,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 223827370}
   agentType: 1
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 1881439991}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &223827370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1155,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 415483829}
   agentType: 2
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 1274539411}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &415483829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,6 +1852,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 1104561108}
   agentType: 0
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 1583957079}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1104561108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,6 +1962,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 1114900692}
   agentType: 3
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 773776450}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1114900692
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public static class SMARTUPMemory
 
     public static int totalCards = 0;
     public static int cardCount = 0;
+    public static bool gamePassed = false;
 
     //Desicions
     //public static Queue<CardAndDesicion> desicions = new Queue<CardAndDesicion>();

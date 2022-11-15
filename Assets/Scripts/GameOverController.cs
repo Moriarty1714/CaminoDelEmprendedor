@@ -39,10 +39,10 @@ public class GameOverController : MonoBehaviour
         sliderClient.value = SMARTUPMemory.powers[2];
         sliderNature.value = SMARTUPMemory.powers[3];
 
-        teamPercent.text = (SMARTUPMemory.powers[0] * 100).ToString() +  " %";
-        moneyPercent.text = (SMARTUPMemory.powers[1]*100).ToString() + " %";
-        clientPercent.text = (SMARTUPMemory.powers[2]*100).ToString() + " %";
-        naturePercent.text = (SMARTUPMemory.powers[3]*100).ToString() + " %";
+        teamPercent.text = ((int)(SMARTUPMemory.powers[0] * 100)).ToString() +  " %";
+        moneyPercent.text = ((int)(SMARTUPMemory.powers[1]*100)).ToString() + " %";
+        clientPercent.text = ((int)(SMARTUPMemory.powers[2]*100)).ToString() + " %";
+        naturePercent.text = ((int)(SMARTUPMemory.powers[3]*100)).ToString() + " %";
     }
 
     void setSentence() {

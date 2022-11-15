@@ -534,7 +534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 3134994011372361097, guid: 79293e7458afb60489adfbebfd74c5a8, type: 3}
-  SMARTObj: {fileID: 786270579}
   sentence: {fileID: 1579784673}
   nameCharachter: {fileID: 1202904526}
   teamAgent: {fileID: 671414141}
@@ -667,6 +666,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 671414140}
   agentType: 0
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 1496420262}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &693443760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 1039474023}
   agentType: 3
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 1792239113}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1060874366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1620,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 1382482740}
   agentType: 2
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 850304347}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1393555161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2130,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderAgent: {fileID: 1604692956}
   agentType: 1
+  lastValue: 0
+  nextValue: 0
+  lastChange: 0
+  duration: 0
+  fillImg: {fileID: 69477089}
+  defaultFillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1614461458
 GameObject:
   m_ObjectHideFlags: 0

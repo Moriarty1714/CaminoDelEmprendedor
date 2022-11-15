@@ -9,30 +9,43 @@ public class CardLogic : MonoBehaviour
 
     public float fMovingSpeed;
     private Vector2 initCardPos;
+    private Vector2 initTouchPos;
 
     public TextMeshProUGUI tmpLeft;
     public TextMeshProUGUI tmpRight;
-    
+
     public bool isMouseOver = false;
     void Start()
     {
         imgCard = GetComponent<SpriteRenderer>();
-        transform.position = new Vector3(0, -0.63f, 0);
+        transform.position = new Vector3(0, -0.44f, 0);
         initCardPos = transform.position;
         imgCard.sprite = card.managerImg;
+
     }
 
     void Update()
     {
         //Movement
-        if (Input.GetMouseButton(0) && isMouseOver)
+        if (Input.GetMouseButtonDown(0))
         {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = pos;
+            initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        }
+        else if (Input.GetMouseButton(0) && isMouseOver)
+        {
+            Vector2 dragPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = initCardPos - (initTouchPos - dragPos);
         }
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, initCardPos, fMovingSpeed);
+        }
+
+        float angle = (-20 * transform.position.x) / 1.5f;
+        if (angle <= 20 && angle >= -20)
+        {
+            transform.eulerAngles = new Vector3(0, 0, angle);
         }
     }
     private void OnMouseOver()
@@ -42,8 +55,9 @@ public class CardLogic : MonoBehaviour
     private void OnMouseExit()
     {
         isMouseOver = false;
+        initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-    
+
     //Texts
     public void RightText()
     {

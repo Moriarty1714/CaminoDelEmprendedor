@@ -23,10 +23,8 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] managersImg = new Sprite[7];
 
-    bool endGame;
     void Start()
     {
-        endGame = false;
         cards = new Stack<Card>();
         reader.ReadFile();
         //generateStackTest();
@@ -36,9 +34,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cards.Count > 0 && !endGame)
+        if (!endGameCondController())
         {
-            if (actualCardGO == null)
+            if (actualCardGO == null && cards.Count > 0)
             {
                 actualCardGO = Instantiate(cardPrefab);
                 actualCardCL = actualCardGO.GetComponent<CardLogic>();
@@ -90,11 +88,10 @@ public class GameManager : MonoBehaviour
 
     void UpdateAgents(bool _isLeftDesicion = false)
     {
-        if (teamAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, teamAgent.agentType)) ||
-        moneyAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, moneyAgent.agentType)) ||
-        clientAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, clientAgent.agentType)) ||
-        natureAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, natureAgent.agentType)))
-            endGame = true;
+        teamAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, teamAgent.agentType));
+        moneyAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, moneyAgent.agentType));
+        clientAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, clientAgent.agentType));
+        natureAgent.updateAgent(actualCardCL.GetAffection(_isLeftDesicion, natureAgent.agentType));
     }
 
     float[] getSlidersValue()
@@ -108,22 +105,6 @@ public class GameManager : MonoBehaviour
         return tmp;
     }
 
-    //void generateStackTest()
-    //{
-    //    Card tmp;
-    //    Affection[] affectionsLeft = new Affection[4];
-    //    Affection[] affectionsRight = new Affection[4];
-    //    for (int i = 0; i < 20; i++)
-    //    {
-    //        for (int j = 0; j < affectionsLeft.Length - 1; j++)
-    //        {
-    //            affectionsLeft[j] = (Affection)Random.Range(0, 5);
-    //            affectionsRight[j] = (Affection)Random.Range(0, 5);
-    //        }
-    //        tmp = new Card(affectionsLeft, affectionsRight, (Manager)Random.Range(0, 6), "Esta carta es la número " + (i + 1).ToString(), "Decisión de la izquierda!" + (i + 1), "Desición de la derecha!" + (i + 1));
-    //        cards.Push(tmp);
-    //    }
-    //}
     void generateStack()
     {
         for (int i = 0; i < reader.cardsInfo.Count; i++)
@@ -185,5 +166,21 @@ public class GameManager : MonoBehaviour
             default:
                 return Manager.DEFAULT;
         }
+    }
+    private bool endGameCondController()
+    {        
+
+        //Mira si hay algun valor de los poderes a 0 para finalizar el juego.
+        if (teamAgent.sliderAgent.value <= 0 || moneyAgent.sliderAgent.value <= 0 || clientAgent.sliderAgent.value <= 0 || natureAgent.sliderAgent.value <= 0)
+          return true;
+        
+        //si no, mira si quedan cartas en la baraja
+        if (cards.Count <= 0 && actualCardGO == null)
+        {
+            SMARTUPMemory.gamePassed = true;
+            return true;
+        }
+
+        return false;
     }
 }
