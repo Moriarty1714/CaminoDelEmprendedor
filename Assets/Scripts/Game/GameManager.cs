@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Globalization;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -23,17 +25,33 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] managersImg = new Sprite[7];
 
+    //Timer
+    public TextMeshProUGUI timerTmp;
+    
+    public int dia;
+    public int mes;
+    public int año;
+
+    public int hora;
+    public int minuto;
+    
     void Start()
     {
         cards = new Stack<Card>();
         reader.ReadFile();
         //generateStackTest();
         generateStack();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (endGameSession()) 
+        {
+            Debug.Log("DONE");
+        }
+
         if (!endGameCondController())
         {
             if (actualCardGO == null && cards.Count > 0)
@@ -180,6 +198,37 @@ public class GameManager : MonoBehaviour
             SMARTUPMemory.gamePassed = true;
             return true;
         }
+
+        return false;
+    }
+
+    bool endGameSession() {
+        DateTime localTime = DateTime.Now;
+        timerTmp.text = ((hora - DateTime.Now.Hour) * 60 + minuto - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second);
+        if (localTime.Year > año)
+            return true;
+        else if (localTime.Year < año)
+            return false;
+
+        if (localTime.Month > mes)
+            return true;
+        else if (localTime.Month < mes)
+            return false;
+
+        if (localTime.Day > dia)
+            return true;
+        else if (localTime.Day < dia)
+            return false;
+
+        if (localTime.Hour > hora)
+            return true;
+        else if (localTime.Hour < hora)
+            return false;
+        
+        if (localTime.Minute > minuto)
+            return true;
+        else if (localTime.Minute < minuto)
+            return false;
 
         return false;
     }

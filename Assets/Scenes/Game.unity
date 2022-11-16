@@ -548,6 +548,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1644dac6c0e002c4f9b73694cc76b7d5, type: 3}
   - {fileID: 21300000, guid: 1644dac6c0e002c4f9b73694cc76b7d5, type: 3}
   - {fileID: 21300000, guid: 8071fb927ed7a3544a8df88dd5e58ea0, type: 3}
+  timerTmp: {fileID: 786270579}
+  dia: 16
+  mes: 11
+  "a\xF1o": 2022
+  hora: 21
+  minuto: 0
 --- !u!4 &552451398
 Transform:
   m_ObjectHideFlags: 0
@@ -759,7 +765,7 @@ GameObject:
   - component: {fileID: 786270580}
   - component: {fileID: 786270579}
   m_Layer: 0
-  m_Name: SmartObjective
+  m_Name: timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,8 +837,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
