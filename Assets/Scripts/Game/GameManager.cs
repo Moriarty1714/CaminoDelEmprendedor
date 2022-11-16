@@ -115,10 +115,10 @@ public class GameManager : MonoBehaviour
     float[] getSlidersValue()
     {
         float[] tmp = new float[4];
-        tmp[0] = teamAgent.sliderAgent.value;
-        tmp[1] = moneyAgent.sliderAgent.value;
-        tmp[2] = clientAgent.sliderAgent.value;
-        tmp[3] = natureAgent.sliderAgent.value;
+        tmp[0] = teamAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[1] = moneyAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[2] = clientAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[3] = natureAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
 
         return tmp;
     }
