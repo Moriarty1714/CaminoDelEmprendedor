@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
                     {
                         UpdateAgents();
 
-                        SMARTUPMemory.cardCount++;
+                        GameMemory.cardCount++;
                         Destroy(actualCardGO);
                     }
                 }
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
                     {
                         UpdateAgents(true);
 
-                        SMARTUPMemory.cardCount++;
+                        GameMemory.cardCount++;
                         Destroy(actualCardGO);
                     }
                 }
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SMARTUPMemory.powers = getSlidersValue();
+            GameMemory.powers = getSlidersValue();
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -115,10 +116,10 @@ public class GameManager : MonoBehaviour
     float[] getSlidersValue()
     {
         float[] tmp = new float[4];
-        tmp[0] = teamAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
-        tmp[1] = moneyAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
-        tmp[2] = clientAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
-        tmp[3] = natureAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[0] = (float)teamAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[1] = (float)moneyAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[2] = (float)clientAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
+        tmp[3] = (float)natureAgent.sliderAgent.GetComponent<AgentSlider>().nextValue;
 
         return tmp;
     }
@@ -144,7 +145,7 @@ public class GameManager : MonoBehaviour
             (string)reader.cardsInfo[i].GetValue(10), (string)reader.cardsInfo[i].GetValue(11)));
         }
 
-        SMARTUPMemory.totalCards = cards.Count;
+        GameMemory.totalCards = cards.Count;
     }
 
     Affection getAffectionFromReader(string s)
@@ -186,16 +187,20 @@ public class GameManager : MonoBehaviour
         }
     }
     private bool endGameCondController()
-    {        
+    {
 
         //Mira si hay algun valor de los poderes a 0 para finalizar el juego.
         if (teamAgent.sliderAgent.value <= 0 || moneyAgent.sliderAgent.value <= 0 || clientAgent.sliderAgent.value <= 0 || natureAgent.sliderAgent.value <= 0)
-          return true;
+        {
+            sendGame();
+            return true;
+        }
         
         //si no, mira si quedan cartas en la baraja
         if (cards.Count <= 0 && actualCardGO == null)
         {
-            SMARTUPMemory.gamePassed = true;
+            GameMemory.gamePassed = true;
+            sendGame();
             return true;
         }
 
@@ -231,5 +236,12 @@ public class GameManager : MonoBehaviour
             return false;
 
         return false;
+    }
+
+    void sendGame() {
+
+        userGame u = new userGame();
+        Debug.Log(u.email);
+        RestClient.Post("https://caminodelemprendedor-7b0a7-default-rtdb.europe-west1.firebasedatabase.app/.json",u);
     }
 }

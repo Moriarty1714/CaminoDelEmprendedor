@@ -24,19 +24,19 @@ public class MainMenu : MonoBehaviour
 
     public void SaveInfo() {
         if (nameUser.text.ToString().Length != 1)
-            SMARTUPMemory.userName = nameUser.text;
+            GameMemory.userName = nameUser.text;
         else
-            SMARTUPMemory.userName = "Unknowed";
+            GameMemory.userName = "Unknowed";
 
         if (email.text.ToString().Length != 1)
-            SMARTUPMemory.email = email.text;
+            GameMemory.email = email.text;
         else
-            SMARTUPMemory.email = "unknowed@unknowed.com";
+            GameMemory.email = "unknowed@unknowed.com";
 
         if (business.text.ToString().Length != 1)
-            SMARTUPMemory.business = business.text;
+            GameMemory.business = business.text;
         else
-            SMARTUPMemory.business = "UnknowedSL";
+            GameMemory.business = "UnknowedSL";
     }
 
     public void sceneGame() {
