@@ -10,7 +10,7 @@ public class HandleCSVFile
     public Dictionary<int, string[]> cardsInfo = new Dictionary<int, string[]>();
     public void ReadFile()
     {
-        string[] info = Resources.Load<TextAsset>("16Cards").text.Split('\n');       
+        string[] info = Resources.Load<TextAsset>("Cards").text.Split('\n');       
 
         for (int i = 0; i < info.Length-1; i++)
         {

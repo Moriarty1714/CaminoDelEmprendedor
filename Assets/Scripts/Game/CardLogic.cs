@@ -18,7 +18,7 @@ public class CardLogic : MonoBehaviour
     void Start()
     {
         imgCard = GetComponent<SpriteRenderer>();
-        transform.position = new Vector3(0, -0.44f, 0);
+        transform.position = new Vector3(0, -0.3199f, 0);
         initCardPos = transform.position;
         imgCard.sprite = card.managerImg;
 

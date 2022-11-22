@@ -1,0 +1,32 @@
+AYUDANTE	0	0	0	0	0	0	0	0	Hoy es la inauguración de tu tienda online, ¡felicidades!	¿Como?	Alfin!
+AYUDANTE	0	0	0	0	0	0	0	0	Pero todavía nos falta alguien. Debemos contratar a un contable.	Martí	Joel
+CONTABLE	0	0,1	0	0	0	0	0	0	Hola yo me encargare de informarte de todo lo relacionado con la economía de la tienda!	Me parece bien, gracias	Encantado de conocerte!
+AYUDANTE	0	0	0	0	0	0	0	0	También te presento a tu jefe de tienda, se encarga de informarte del rendimiento de la tienda.	¿Quién es?	De acuerdo
+JEFE DE TIENDA	0	0	0	0	0	0	0	0	Hola soy tu jefe de tienda, me encargo de gestionar el funcionamiento de la tienda y el personal, encantado!	Un placer	Un placer
+AYUDANTE	-0,2	0,1	0,1	-0,1	0	0,1	0,1	-0,1	Nos hemos dado cuenta de que estamos produciendo muchos residuos ¿qué hacemos?	Diseñamos un producto a partir de los residuos que generamos	Mientras no nos multen o investigue no hacemos nada
+ITEM	0	0	0	0	0	0	0	0	ITEM ENCONTRADO: LIQUIDO BISCOSO	Bien!	Bien!
+AVENTURERO	0	0	0	0	0	0	0	0	Me deshidrato! Ayudame!	Tenemos para beber este super batido biscoso	Bebete este líquido tan verde!
+CONTABLE	0,2	-0,2	0	0,2	0,1	-0,2	0	-0,1	Parece que algunos trabajadores no están muy contentos con el sueldo.	Auméntales el sueldo a todos	Programaremos formaciones para el equipo.
+JEFE DE TIENDA	0	0	0,1	0	0	-0,2	-0,1	0	Parece que el aventurero a vuelto enfadado y ha puesto una reclamación, dice que le ha desaparecido el estomago. Que hacemos al respecto?	Recurrimos al seguro de sociedad civil	Compensar con dinero
+ALDEANO	0	0,1	0,1	0	0	0,2	0,1	0	Pero estos precios son muy caros, no puedes rebajarmelo?	Justamente hoy hemos creado la tarjeta de descuento para aldeanos	Doy información sobre los costes de mis productos
+JEFE DE TIENDA	0,1	-0,1	0	-0,1	-0,1	0,1	0	-0,2	No se como decirlo... uno de los reponedores ha tiirado el liquido viscoso al suelo.	No pasa nada, tenemos un protocolo limpieza respetuoso y fácil de aplicar	Despedido de inmediato
+ITEM	0	0	0	0	0	0	0	0	Parece que el liquido crea portales de teletransportación.	Interesante...	Interesante...
+CONTABLE	0	-0,2	0,1	-0,1	0	-0,1	0,1	0	Has pensado en hacer repartos a domicilio?	Buen plan, compraré una moto	Buen plan, comprare una bicicleta
+AYUDANTE	0	0,2	0	0,2	0	-0,1	0	0	Parece que podemos invertir en algo de marketing. Que prefieres?	Invertiré en una consultoría de marketing digital	Pondremos anuncios en la radio y televisión
+JEFE DE TIENDA	0	0	0	0	0	0	0	0	Me gastaría hacer algunas pruebas con el liquido viscoso mágico.	Okey	Okey
+JEFE DE TIENDA	0	0	0	0	0	0	0	0	Bueno, creo que mejor no andes por el bosque en los dias proximos, hay liquido viscoso mágico por todas partes y puede resultar algo peligroso, pero el liquido puede ser algo muy útil	Gracias por el consejo	Gracias por el consejo
+HOMBRE MISTERIOSO	0	0	0	0	0	-0,1	0	0	Quiero hacer un trato: Véndeme todo el liquido que tengas y tráeme todo lo que encuentres a mi por un buen precio.	No firmamos	Firmamos
+CONTABLE	-0,2	0,1	-0,1	0	0	0	0	0	Parece que tienes competencia. Han abierto otra tienda en el pueblo.	Espiar a la competencia	Mejorar imagen donando productos para eventos culturales
+JEFE DE TIENDA	0	-0,1	-0,2	0	0,1	0,1	0,1	-0,1	Los repartidores no llegan a completar todos los pedidos.	Reducir los repartos	Contratar personal
+AYUDANTE	0	-0,1	0,1	-0,1	0	0,1	0,1	0,2	Creo que podemos sacarle mas provecho al liquido.	Deberíamos venderlo para uso domestico y posteriormente 	Lo podriamos usar para enviar los pedidos a domicilio
+AYUDANTE	0,1	0	-0,1	0	-0,1	0,1	-0,1	0	Este liquido es muy util!	Patente pública para que otros puedan usarla	Patente privada, si otros saben el secreto no tendremos tanto beneficio
+ITEM	0	0	0	0	0	0	0	0	Pistola de portales creada!	Estupendo!	Bien!
+ALDEANO	0	-0,1	0	0	0	0	0,1	0	Creo que ire a la otra tienda, parece que tiene mejores objetos	Ajustar los precios	Hacer mas visibles los valores de la empresa
+JEFE DE TIENDA	0	-0,1	0	0,2	0	0,1	0	-0,1	Creo que podríamos poner a la venta la pistola de portales	Valoremos que impacto medioambiental tiene	Arriesguemos! ya descubriremos que pasa.
+AVENTURERO	0,2	0	-0,1	0	0	0,1	0,1	0	Me he encontrado 1000 monedas de oro! que hacemos?	Invirtamos en la formación de los empleados	Invirtamoslo en una asesoria de marketing
+CONTABLE	-0,1	-0,2	-0,2	0	0	-0,1	-0,1	0	Ha habido un error de contabilidad. Que hacemos?	Ya lo solucionaremos	Pagar la multa de inmedato!
+ALDEANO	0,2	-0,1	0	0	-0,1	0,1	0	0	Deberiamos invertir mas en el bienestar de nuestros trabajadores	Ya se las apañan	¡Estoy de acuerdo!
+JEFE DE TIENDA	0,1	0	-0,2	0	-0,1	0	0,1	0	Creo que a la empresa le importa mas el cliente que el trabajador	No es así	Claro
+ALDEANO	0,1	-0,2	0	0,2	-0,1	0,1	0	-0,1	Se dice que que no se recicla debidamente	Que hablen	Vamos a demostrar que se equivocan
+CONTABLE	0,1	0,1	0	0,2	-0,1	0,1	0	-0,1	Las ventas van muy bien, que debemos hacer con el superhábito?	Retiro a la montaña	¡Fiesta en yates!
+JEFE DE TIENDA	0	-0,1	0	0	0	0,1	-0,2	0	Podriamos cambiar los recipientes donde se vende el liquido viscoso por unos biodegradables y mas pequeños	Nos la jugaremos	Solicita uno

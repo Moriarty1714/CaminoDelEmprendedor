@@ -2,7 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Manager { RRHH, PRODUCT, ADMIN, BOARD, MARKETING, FINANCES, DEFAULT }
+public enum Manager {
+    AYUDANTE,
+    CONTABLE,
+    JEFE_DE_TIENDA,
+    ALDEANO,
+    HOMBRE_MISTERIOSO,
+    AVENTURERO,
+    ITEM, 
+    DEFAULT
+}
 public enum Affection { VERY_POSITIVE, POSITIVE, NEUTRAL, NEGATIVE, VERY_NEGATIVE}
 public enum Agent { TEAM, MONEY, CLIENT, NATURE}
 
@@ -43,24 +52,22 @@ public class Card
     {
         switch (manager)
         {
-            case Manager.RRHH:
-                return "Encargado de recursos humanos";
-
-            case Manager.PRODUCT:
-                return "Encargado de productos y servicios";
-
-            case Manager.ADMIN:
-                return "Administrador";
-
-            case Manager.BOARD:
-                return "Junta Directiva";
-
-            case Manager.MARKETING:
-                return "Encargado de márqueting";
-
-            case Manager.FINANCES:
-                return "Encargado de finanzas";
-
+            case Manager.AYUDANTE:
+               return "Ayudante";
+            case Manager.CONTABLE:
+                return "Contable";
+            case Manager.JEFE_DE_TIENDA:
+                return "Jefe de Tienda";
+            case Manager.ALDEANO:
+                return "Aldeano";
+            case Manager.HOMBRE_MISTERIOSO:
+                return "Hombre Misterioso";
+            case Manager.AVENTURERO:
+                return "Aventurero";
+            case Manager.ITEM:
+                return "";
+            case Manager.DEFAULT:
+                return "Persona";
             default:
                 return "Un random ha aparecido!";
         }

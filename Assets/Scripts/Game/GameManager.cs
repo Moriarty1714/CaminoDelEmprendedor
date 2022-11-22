@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     void generateStack()
     {
-        for (int i = 0; i < reader.cardsInfo.Count; i++)
+        for (int i = reader.cardsInfo.Count-1; i > -1; i--)
         {
             Affection[] affectionsLeft = new Affection[4];
             Affection[] affectionsRight = new Affection[4];
@@ -170,20 +170,25 @@ public class GameManager : MonoBehaviour
     {
         switch (s)
         {
-            case "RRHH":
-                return Manager.RRHH;
-            case "PRODUCT":
-                return Manager.PRODUCT;
-            case "ADMIN":
-                return Manager.ADMIN;
-            case "JUNTA":
-                return Manager.BOARD;
-            case "MARKETING":
-                return Manager.MARKETING;
-            case "FINANZAS":
-                return Manager.FINANCES;
+            case "AYUDANTE":
+                return Manager.AYUDANTE;
+            case "CONTABLE":
+                return Manager.CONTABLE;
+            case "JEFE DE TIENDA":
+                return Manager.JEFE_DE_TIENDA;
+            case "ALDEANO":
+                return Manager.ALDEANO;
+            case "HOMBRE MISTERIOSO":
+                return Manager.HOMBRE_MISTERIOSO;
+            case "AVENTURERO":
+                return Manager.AVENTURERO;
+            case "ITEM":
+                return Manager.ITEM;
+            case "DEFAULT":
+                return Manager.DEFAULT;
             default:
                 return Manager.DEFAULT;
+
         }
     }
     private bool endGameCondController()
