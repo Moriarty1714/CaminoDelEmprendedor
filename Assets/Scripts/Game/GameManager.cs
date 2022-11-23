@@ -32,14 +32,17 @@ public class GameManager : MonoBehaviour
 
     //Timer
     public TextMeshProUGUI timerTmp;
-    
+    public int minSesionDuration;
+
     public int dia;
     public int mes;
     public int año;
 
     public int hora;
     public int minuto;
-    
+
+    private DateTime startTime;
+    public Slider sliderTime;
     void Start()
     {
         cards = new Stack<Card>();
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
         generateStack();
         Debug.Log(cards.Count);
         nCardsSliderValue = 0;
+        startTime = DateTime.Now;
     }
 
     // Update is called once per frame
@@ -225,6 +229,8 @@ public class GameManager : MonoBehaviour
     bool endGameSession() {
         DateTime localTime = DateTime.Now;
         timerTmp.text = ((hora - DateTime.Now.Hour) * 60 + minuto - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second);
+        //Debug.Log((((hora - DateTime.Now.Hour) * 60 + minuto - DateTime.Now.Minute) * 60 + (60 - DateTime.Now.Second)));
+        sliderTime.value = (((hora - DateTime.Now.Hour) * 60f + minuto - DateTime.Now.Minute)*60f + (60f - DateTime.Now.Second))/(minSesionDuration*60);
         if (localTime.Year > año)
             return true;
         else if (localTime.Year < año)
