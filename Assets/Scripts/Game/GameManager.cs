@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Proyecto26;
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject cardPrefab;
     [SerializeField] private Stack<Card> cards;
     private HandleCSVFile reader = new HandleCSVFile();
+
+    public Slider nCardsSlider;
+    private float nCardsSliderValue;
 
     GameObject actualCardGO;
     CardLogic actualCardCL;
@@ -40,9 +44,9 @@ public class GameManager : MonoBehaviour
     {
         cards = new Stack<Card>();
         reader.ReadFile();
-        //generateStackTest();
         generateStack();
-       
+
+        nCardsSliderValue = 0;
     }
 
     // Update is called once per frame
@@ -77,6 +81,9 @@ public class GameManager : MonoBehaviour
 
                         GameMemory.cardCount++;
                         Destroy(actualCardGO);
+
+                        nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
+                        nCardsSlider.value = nCardsSliderValue;
                     }
                 }
                 else if (actualCardGO.transform.position.x < -1.5) //Left
@@ -89,6 +96,9 @@ public class GameManager : MonoBehaviour
 
                         GameMemory.cardCount++;
                         Destroy(actualCardGO);
+
+                        nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
+                        nCardsSlider.value = nCardsSliderValue;
                     }
                 }
                 else
