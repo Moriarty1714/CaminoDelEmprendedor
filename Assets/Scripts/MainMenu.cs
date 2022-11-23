@@ -65,6 +65,7 @@ public class MainMenu : MonoBehaviour
                 img.color = new Color(img.color.r, img.color.g, img.color.b, i);
                 yield return null;
             }
+            Destroy(img.gameObject);
         }
         // fade from transparent to opaque
         else
