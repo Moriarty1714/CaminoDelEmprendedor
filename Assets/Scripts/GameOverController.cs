@@ -20,24 +20,29 @@ public class GameOverController : MonoBehaviour
 
     public Slider sliderCard;
     public TextMeshProUGUI numCard;
+
+    private bool powersUpdated = false;
     void Start()
     {
         setPowerValues();
-        setSentence();
         setCardValue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!powersUpdated) {
+            setPowerValues();
+            setSentence();
+            powersUpdated = true;
+        }
     }
 
     void setPowerValues() {
         sliderTeam.GetComponent<AgentSlider>().nextValue = GameMemory.powers[0];
-        sliderTeam.GetComponent<AgentSlider>().nextValue = GameMemory.powers[1];
-        sliderTeam.GetComponent<AgentSlider>().nextValue = GameMemory.powers[2];
-        sliderTeam.GetComponent<AgentSlider>().nextValue = GameMemory.powers[3];
+        sliderMoney.GetComponent<AgentSlider>().nextValue = GameMemory.powers[1];
+        sliderClient.GetComponent<AgentSlider>().nextValue = GameMemory.powers[2];
+        sliderNature.GetComponent<AgentSlider>().nextValue = GameMemory.powers[3];
 
         teamPercent.text = ((int)(GameMemory.powers[0] * 100)).ToString() +  " %";
         moneyPercent.text = ((int)(GameMemory.powers[1]*100)).ToString() + " %";
