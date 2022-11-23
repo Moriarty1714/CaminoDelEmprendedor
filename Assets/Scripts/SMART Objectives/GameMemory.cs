@@ -12,7 +12,7 @@ public static class GameMemory
     //Métricas
     public static float [] powers = new float [4];
 
-    public static int totalCards = 32;
+    public static int totalCards = 36;
     public static int cardCount = 0;
     public static bool gamePassed = false;
 

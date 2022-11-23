@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         cards = new Stack<Card>();
         reader.ReadFile();
         generateStack();
-
+        Debug.Log(cards.Count);
         nCardsSliderValue = 0;
     }
 

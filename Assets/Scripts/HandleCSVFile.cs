@@ -12,7 +12,7 @@ public class HandleCSVFile
     {
         string[] info = Resources.Load<TextAsset>("Cards").text.Split('\n');       
 
-        for (int i = 0; i < info.Length-1; i++)
+        for (int i = 0; i < info.Length; i++)
         {
             string[] tmpInfo = info[i].Split('\t');
             cardsInfo[i] = tmpInfo;
