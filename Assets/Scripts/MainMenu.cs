@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     public Image ludensLogo;
     public Image acehLogo;
     public Image splashScreenPanel;
+    
+    public GameObject dataPlayerPanel;
 
     public TextMeshProUGUI nameUser;
     public TextMeshProUGUI email;
@@ -46,6 +48,8 @@ public class MainMenu : MonoBehaviour
             GameMemory.business = business.text;
         else
             GameMemory.business = "UnknowedSL";
+
+        dataPlayerPanel.SetActive(false);
     }
 
     public void sceneGame() {

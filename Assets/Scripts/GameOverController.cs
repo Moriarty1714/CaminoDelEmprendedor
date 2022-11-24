@@ -60,7 +60,7 @@ public class GameOverController : MonoBehaviour
         else if (sliderNature.value <= 0)
             sentence.text = "No hemos sido respetuosos con el medio ambiente";
         else
-            sentence.text = "Felicidades! Eres un/a verdader/a emprendedor/a";
+            sentence.text = "Felicidades! Eres un/a verdadero/a emprendedor/a";
     }
 
     void setCardValue() 

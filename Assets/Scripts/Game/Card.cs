@@ -57,7 +57,7 @@ public class Card
             case Manager.CONTABLE:
                 return "Contable";
             case Manager.JEFE_DE_TIENDA:
-                return "Jefe de Tienda";
+                return "Responsable de Tienda";
             case Manager.ALDEANO:
                 return "Aldeano";
             case Manager.HOMBRE_MISTERIOSO:

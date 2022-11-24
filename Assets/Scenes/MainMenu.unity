@@ -2430,7 +2430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Este icono muestra el grado de satisfacci\xF3n que tienen tus clientes
+  m_text: "Este icono muestra el grado de satisfacci\xF3n que tienen tu clientela
     con los productos y servicios de tu empresa. \xA1Son tu principal fuente de ingresos!            
     \n\r"
   m_isRightToLeft: 0
@@ -4615,7 +4615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Este icono muesta la confianza y respeto que tienen tus trabajadores contigo.
+  m_text: "Este icono muesta la confianza y respeto que tiene tu plantilla contigo.
     Son el motor de la empresa y la pieza angular de su buen desarrollo.                                                                   
     \n\r"
   m_isRightToLeft: 0
@@ -6014,7 +6014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1525379802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6445,6 +6445,7 @@ MonoBehaviour:
   ludensLogo: {fileID: 1889186169}
   acehLogo: {fileID: 1370755838}
   splashScreenPanel: {fileID: 1525379803}
+  dataPlayerPanel: {fileID: 1088856112}
   nameUser: {fileID: 1273867275}
   email: {fileID: 1506970442}
   business: {fileID: 695402642}
