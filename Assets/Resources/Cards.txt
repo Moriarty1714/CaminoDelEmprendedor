@@ -13,12 +13,12 @@ JEFE DE TIENDA	0,1	-0,1	0	-0,1	-0,1	0,1	0	-0,2	No sé cómo decirlo... uno de lo
 ITEM	0	0	0	0	0	0	0	0	Parece que el líquido crea portales de teletransportación.	Interesante...	Interesante...
 CONTABLE	0	-0,2	0,1	-0,2	0	-0,2	0,1	0,1	¿Has pensado en hacer repartos a domicilio?	¡Buen plan! Compraré una moto	Buen plan, compraré una bicicleta
 AYUDANTE	0	0,1	0	0,2	0	-0,1	0	-0,2	Parece que podemos invertir en algo de marketing. ¿Qué prefieres?	Invertiré en una consultoría de marketing digital	Flyers y carteles en toda la ciudad
-JEFE DE TIENDA	0	0	0	0	0	0	0	0	Me gastaría hacer algunas pruebas con el líquido viscoso mágico.	Okey	Okey
+JEFE DE TIENDA	0	0	0	0	0	0	0	0	Me gustaría hacer algunas pruebas con el líquido viscoso mágico.	Okey	Okey
 JEFE DE TIENDA	0	0	0	0	0	0	0	0	Creo que mejor no andes por el bosque estos dias, hay mucho líquido viscoso mágico. Puede resultar algo peligroso...y útil.	Gracias por el consejo	Gracias por el consejo
-HOMBRE MISTERIOSO	0	0	0	0	0	-0,1	0	0	Quiero hacer un trato: Véndeme todo el líquido que tengas y tráeme todo lo que encuentres a mí por un buen precio.	No firmamos	Firmamos
+HOMBRE MISTERIOSO	0	0	0	0	0	-1	0	0	Quiero hacer un trato: Véndeme todo el líquido que tengas y tráeme todo lo que encuentres a mí por un buen precio.	No firmamos	Firmamos
 CONTABLE	-0,2	0,1	-0,2	0	0	0	0,1	0	Parece que tienes competencia. Han abierto otra tienda en el pueblo.	Espiar a la competencia	Mejorar imagen donando productos para eventos culturales
 JEFE DE TIENDA	0	-0,2	-0,2	0	0,1	0,1	0,1	-0,2	Los repartidores no llegan a completar todos los pedidos.	Reducir los repartos	Contratar personal
-AYUDANTE	0	-0,2	0,1	-0,2	0	0,1	0,1	0,2	Creo que podemos sacarle más provecho al líquido.	Deberíamos venderlo para uso doméstico y posteriormente	Lo podríamos usar para enviar los pedidos a domicilio
+AYUDANTE	0	-0,2	0,1	-0,2	0	0,1	0,1	0,2	Creo que podemos sacarle más provecho al líquido.	Deberíamos venderlo para uso doméstico	Lo podríamos usar para enviar los pedidos a domicilio
 AYUDANTE	0,1	0	-0,1	0	-0,2	0,1	-0,2	0	¡Este líquido es muy útil!	Licencia libre para que otros puedan usarla	Licencia privada, si otros saben el secreto no tendremos tanto beneficio
 ITEM	0	0	0	0	0	0	0	0	¡Pistola de portales creada!	Estupendo!	Bien!
 ALDEANO	0	-0,1	0	0	0	0	0,1	0	¿Creo que iré a la otra tienda, parece que tiene mejores objetos.	Ajustar los precios	Hacer más visibles los valores de la empresa

@@ -51,13 +51,13 @@ public class GameOverController : MonoBehaviour
     }
 
     void setSentence() {
-        if (sliderTeam.value <= 0)
+        if (GameMemory.powers[0] <= 0)
             sentence.text = "El equipo esta frustrado";
-        else if (sliderMoney.value <= 0)
+        else if (GameMemory.powers[1] <= 0)
             sentence.text = "Nos hemos quedado sin dinero";
-        else if (sliderClient.value <= 0)
+        else if (GameMemory.powers[2] <= 0)
             sentence.text = "Los clientes no estan nada contentos";
-        else if (sliderNature.value <= 0)
+        else if (GameMemory.powers[3] <= 0)
             sentence.text = "No hemos sido respetuosos con el medio ambiente";
         else
             sentence.text = "Felicidades! Eres un/a verdadero/a emprendedor/a";

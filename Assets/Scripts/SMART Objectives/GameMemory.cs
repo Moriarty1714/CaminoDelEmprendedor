@@ -25,10 +25,9 @@ public class userGame{
     public string business;
 
     //Métricas
-    public int[] powers = new int[4];
+    public float[] powers = new float[4];
 
     public int cardCount = 0;
-    public bool gamePassed = false;
 
     public userGame() {
         userName = GameMemory.userName;
@@ -36,9 +35,9 @@ public class userGame{
         business = GameMemory.business;
 
         powers[0] = (int)(GameMemory.powers[0] * 100);
-        powers[1] = (int)(GameMemory.powers[0] * 100);
-        powers[2] = (int)(GameMemory.powers[0] * 100);
-        powers[3] = (int)(GameMemory.powers[0] * 100);
+        powers[1] = (int)(GameMemory.powers[1] * 100);
+        powers[2] = (int)(GameMemory.powers[2] * 100);
+        powers[3] = (int)(GameMemory.powers[3] * 100);
 
         cardCount = GameMemory.cardCount;
     }

@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         else
         {
             GameMemory.powers = getSlidersValue();
+            sendGame();
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -211,14 +212,14 @@ public class GameManager : MonoBehaviour
         //Mira si hay algun valor de los poderes a 0 para finalizar el juego.
         if (teamAgent.sliderAgent.value <= 0 || moneyAgent.sliderAgent.value <= 0 || clientAgent.sliderAgent.value <= 0 || natureAgent.sliderAgent.value <= 0)
         {
-            sendGame();
+
             return true;
         }
         
         //si no, mira si quedan cartas en la baraja
         if (cards.Count <= 0 && actualCardGO == null)
         {
-            sendGame();
+
             return true;
         }
 
