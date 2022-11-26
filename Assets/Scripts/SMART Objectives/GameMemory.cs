@@ -14,6 +14,7 @@ public static class GameMemory
 
     public static int totalCards = 36;
     public static int cardCount = 0;
+    public static bool gamePassed = false;
 
     //Desicions
     //public static Queue<CardAndDesicion> desicions = new Queue<CardAndDesicion>();
@@ -28,6 +29,7 @@ public class userGame{
     public float[] powers = new float[4];
 
     public int cardCount = 0;
+    public bool gamePassed = false;
 
     public userGame() {
         userName = GameMemory.userName;
@@ -40,5 +42,6 @@ public class userGame{
         powers[3] = (int)(GameMemory.powers[3] * 100);
 
         cardCount = GameMemory.cardCount;
+        gamePassed = GameMemory.gamePassed;
     }
 }

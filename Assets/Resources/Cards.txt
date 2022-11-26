@@ -25,7 +25,7 @@ ALDEANO	0	-0,1	0	0	0	0	0,1	0	¿Creo que iré a la otra tienda, parece que tiene 
 JEFE DE TIENDA	0	-0,1	0	0,2	0	0,1	0	-0,2	Creo que podríamos poner a la venta la pistola de portales.	Valoremos que impacto medioambiental tiene	Arriesguemos!, ya descubriremos que pasa.
 AVENTURERO	0,1	0	-0,2	0	0	0	0,1	0	Me he encontrado 1000 monedas de oro!, que hacemos?	Invirtamos en la formación de los empleados	Invirtamoslo en una asesoría de marketing
 CONTABLE	-0,2	-0,2	-0,1	0	0	-0,1	-0,1	0	Ha habido un error de contabilidad. ¿Qué hacemos?	Ya lo solucionaremos	Pagar la multa de inmediato!
-ALDEANO	0,2	-0,1	0	0	-0,2	0,1	0	0	¿Deberíamos invertir más en el bienestar de nuestra plantilla.	¡Estoy de acuerdo!	Ya se las apañan
+AYUDANTE	0,2	-0,1	0	0	-0,2	0,1	0	0	Deberíamos invertir más en el bienestar de nuestra plantilla.	¡Estoy de acuerdo!	Ya se las apañan
 JEFE DE TIENDA	0,1	0	-0,1	0	-0,2	0	0,1	0	Creo que a la empresa le importa más la clientela que la plantilla.	No es así	Claro
 ALDEANO	-0,2	0,1	0	-0,2	0,1	-0,2	0	0,1	Se dice que no se recicla debidamente.	Que hablen	Vamos a demostrar que se equivocan
 CONTABLE	0,1	0,1	0	0,2	-0,2	0,1	0	-0,2	Las ventas van muy bien, que debemos hacer con el superhábito?	Retiro a la montaña	¡Fiesta en yates!

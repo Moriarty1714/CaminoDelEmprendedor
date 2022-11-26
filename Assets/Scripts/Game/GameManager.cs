@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
         //si no, mira si quedan cartas en la baraja
         if (cards.Count <= 0 && actualCardGO == null)
         {
-
+            GameMemory.gamePassed = true;
             return true;
         }
 
