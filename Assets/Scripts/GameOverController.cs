@@ -52,15 +52,15 @@ public class GameOverController : MonoBehaviour
 
     void setSentence() {
         if (GameMemory.powers[0] <= 0)
-            sentence.text = "El equipo esta frustrado";
+            sentence.text = "El equipo es el alma de la empresa, hacen posible la producción y los servicios";
         else if (GameMemory.powers[1] <= 0)
-            sentence.text = "Nos hemos quedado sin dinero";
+            sentence.text = "El dinero nos permiten la viabilidad, permanencia y bienestar del proyecto";
         else if (GameMemory.powers[2] <= 0)
-            sentence.text = "Los clientes no estan nada contentos";
+            sentence.text = "Las necesidades de la clientela son nuestra razón de ser, sin ventas ni comunidad no hay negocio";
         else if (GameMemory.powers[3] <= 0)
-            sentence.text = "No hemos sido respetuosos con el medio ambiente";
+            sentence.text = "La sostenibilidad nos garantizan un futuro equilibrado a nivel económico, el ambiental y social.";
         else
-            sentence.text = "Felicidades! Eres un/a verdadero/a emprendedor/a";
+            sentence.text = "Los valores empresariales nos guían a lo largo de todas nuestras acciones y decisiones. Individual y colectivamente, nos ayudan a avanzar como sociedad.";
     }
 
     void setCardValue() 

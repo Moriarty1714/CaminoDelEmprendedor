@@ -9,7 +9,8 @@ public enum Manager {
     ALDEANO,
     HOMBRE_MISTERIOSO,
     AVENTURERO,
-    ITEM, 
+    LIQUIDO,
+    PISTOLA,
     DEFAULT
 }
 public enum Affection { VERY_POSITIVE, POSITIVE, NEUTRAL, NEGATIVE, VERY_NEGATIVE}
@@ -64,8 +65,10 @@ public class Card
                 return "Hombre Misterioso";
             case Manager.AVENTURERO:
                 return "Aventurero";
-            case Manager.ITEM:
-                return "";
+            case Manager.LIQUIDO:
+                return "ITEM";
+            case Manager.PISTOLA:
+                return "ITEM";
             case Manager.DEFAULT:
                 return "Persona";
             default:

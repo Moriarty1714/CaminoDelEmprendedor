@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public AgentSlider clientAgent;
     public AgentSlider natureAgent;
 
-    public Sprite[] managersImg = new Sprite[7];
+    public Sprite[] managersImg = new Sprite[9];
 
     //Timer
     public TextMeshProUGUI timerTmp;
@@ -41,83 +41,94 @@ public class GameManager : MonoBehaviour
     public int hora;
     public int minuto;
 
-    private DateTime startTime;
     public Slider sliderTime;
+    public GameObject timeOutCanvas;
+
+    bool endTimer = false;
     void Start()
     {
         cards = new Stack<Card>();
         reader.ReadFile();
         generateStack();
-        Debug.Log(cards.Count);
         nCardsSliderValue = 0;
-        startTime = DateTime.Now;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (endGameSession()) 
+        if (endGameSession() && !endTimer)
         {
             Debug.Log("DONE");
+            GameMemory.powers = getSlidersValue();
+            timeOutCanvas.SetActive(true);
+            Destroy(actualCardGO);
+            cards.Clear();
+
+            sendGame();
+            endTimer = true;
         }
-
-        if (!endGameCondController())
+        else if (!endTimer) 
         {
-            if (actualCardGO == null && cards.Count > 0)
+            if (!endGameCondController())
             {
-                actualCardGO = Instantiate(cardPrefab);
-                actualCardCL = actualCardGO.GetComponent<CardLogic>();
-
-                actualCardCL.SetCard(cards.Pop());
-                sentence.text = actualCardCL.GetSentence();
-                nameCharachter.text = actualCardCL.GetManager();
-            }
-            else
-            {
-                //Check direction
-                if (actualCardGO.transform.position.x > 1.5) //Right
+                if (actualCardGO == null && cards.Count > 0)
                 {
-                    actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
-                    actualCardCL.RightText();
-                    if (!Input.GetMouseButton(0))
-                    {
-                        UpdateAgents();
+                    actualCardGO = Instantiate(cardPrefab);
+                    actualCardCL = actualCardGO.GetComponent<CardLogic>();
 
-                        GameMemory.cardCount++;
-                        Destroy(actualCardGO);
-
-                        nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
-                        nCardsSlider.value = nCardsSliderValue;
-                    }
-                }
-                else if (actualCardGO.transform.position.x < -1.5) //Left
-                {
-                    actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
-                    actualCardCL.LeftText();
-                    if (!Input.GetMouseButton(0))
-                    {
-                        UpdateAgents(true);
-
-                        GameMemory.cardCount++;
-                        Destroy(actualCardGO);
-
-                        nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
-                        nCardsSlider.value = nCardsSliderValue;
-                    }
+                    actualCardCL.SetCard(cards.Pop());
+                    sentence.text = actualCardCL.GetSentence();
+                    nameCharachter.text = actualCardCL.GetManager();
                 }
                 else
                 {
-                    actualCardCL.imgCard.color = new Color(1f, 1f, 1f);
-                    actualCardCL.NoneText();
+                    //Check direction
+                    if (actualCardGO.transform.position.x > 1) //Right
+                    {
+                        actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
+                        actualCardCL.RightText();
+                        if (!Input.GetMouseButton(0))
+                        {
+                            UpdateAgents();
+
+                            GameMemory.cardCount++;
+                            Destroy(actualCardGO);
+
+                            nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
+                            nCardsSlider.value = nCardsSliderValue;
+                        }
+                    }
+                    else if (actualCardGO.transform.position.x < -1) //Left
+                    {
+                        actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
+                        actualCardCL.LeftText();
+                        if (!Input.GetMouseButton(0))
+                        {
+                            UpdateAgents(true);
+
+                            GameMemory.cardCount++;
+                            Destroy(actualCardGO);
+
+                            nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
+                            nCardsSlider.value = nCardsSliderValue;
+                        }
+                    }
+                    else
+                    {
+                        actualCardCL.imgCard.color = new Color(1f, 1f, 1f);
+                        actualCardCL.NoneText();
+                    }
                 }
             }
+            else
+            {
+                GameMemory.powers = getSlidersValue();
+                sendGame();
+                SceneManager.LoadScene("GameOver");
+            }
+
         }
-        else
-        {
-            GameMemory.powers = getSlidersValue();
-            sendGame();
-            SceneManager.LoadScene("GameOver");
-        }
+
     }
 
     void UpdateAgents(bool _isLeftDesicion = false)
@@ -197,8 +208,10 @@ public class GameManager : MonoBehaviour
                 return Manager.HOMBRE_MISTERIOSO;
             case "AVENTURERO":
                 return Manager.AVENTURERO;
-            case "ITEM":
-                return Manager.ITEM;
+            case "PISTOLA":
+                return Manager.PISTOLA;
+            case "LIQUIDO":
+                return Manager.LIQUIDO;
             case "DEFAULT":
                 return Manager.DEFAULT;
             default:
