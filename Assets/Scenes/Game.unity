@@ -985,12 +985,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a7e225e4df7d2944aad9125e1a27390c, type: 3}
   - {fileID: 21300000, guid: 8071fb927ed7a3544a8df88dd5e58ea0, type: 3}
   timerTmp: {fileID: 786270579}
-  minSesionDuration: 20
-  dia: 29
-  mes: 11
-  "a\xF1o": 2023
-  hora: 12
-  minuto: 50
+  minSesionDuration: 19
   sliderTime: {fileID: 1341815915}
   timeOutCanvas: {fileID: 600353173}
 --- !u!4 &552451398

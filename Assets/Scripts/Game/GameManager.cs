@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
         generateStack();
         nCardsSliderValue = 0;
 
-        finishTime = DateTime.Now;       
-        finishTime.AddMinutes(minSesionDuration);
+        finishTime = DateTime.Now.AddMinutes(minSesionDuration);       
 
     }
 
