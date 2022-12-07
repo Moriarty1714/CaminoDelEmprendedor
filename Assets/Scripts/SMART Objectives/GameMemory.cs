@@ -6,7 +6,6 @@ public static class GameMemory
 {
 
     public static string userName;
-    public static string email;
     public static string business;
 
     //Métricas
@@ -22,7 +21,6 @@ public static class GameMemory
 }
 public class userGame{
     public string userName;
-    public string email;
     public string business;
 
     //Métricas
@@ -33,7 +31,6 @@ public class userGame{
 
     public userGame() {
         userName = GameMemory.userName;
-        email = GameMemory.email;
         business = GameMemory.business;
 
         powers[0] = (int)(GameMemory.powers[0] * 100);

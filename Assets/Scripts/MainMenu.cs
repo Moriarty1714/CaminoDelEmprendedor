@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
     public GameObject dataPlayerPanel;
 
     public TextMeshProUGUI nameUser;
-    public TextMeshProUGUI email;
     public TextMeshProUGUI business;
 
     // Start is called before the first frame update
@@ -38,11 +37,6 @@ public class MainMenu : MonoBehaviour
             GameMemory.userName = nameUser.text;
         else
             GameMemory.userName = "Unknowed";
-
-        if (email.text.ToString().Length != 1)
-            GameMemory.email = email.text;
-        else
-            GameMemory.email = "unknowed@unknowed.com";
 
         if (business.text.ToString().Length != 1)
             GameMemory.business = business.text;

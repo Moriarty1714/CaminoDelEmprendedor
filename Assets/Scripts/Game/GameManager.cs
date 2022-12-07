@@ -33,13 +33,7 @@ public class GameManager : MonoBehaviour
     //Timer
     public TextMeshProUGUI timerTmp;
     public int minSesionDuration;
-
-    public int dia;
-    public int mes;
-    public int año;
-
-    public int hora;
-    public int minuto;
+    public DateTime finishTime;
 
     public Slider sliderTime;
     public GameObject timeOutCanvas;
@@ -51,6 +45,10 @@ public class GameManager : MonoBehaviour
         reader.ReadFile();
         generateStack();
         nCardsSliderValue = 0;
+
+        finishTime = DateTime.Now;       
+        finishTime.AddMinutes(minSesionDuration);
+
     }
 
     // Update is called once per frame
@@ -83,7 +81,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     //Check direction
-                    if (actualCardGO.transform.position.x > 1) //Right
+                    if (actualCardGO.transform.position.x > 0.75f) //Right
                     {
                         actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
                         actualCardCL.RightText();
@@ -98,7 +96,7 @@ public class GameManager : MonoBehaviour
                             nCardsSlider.value = nCardsSliderValue;
                         }
                     }
-                    else if (actualCardGO.transform.position.x < -1) //Left
+                    else if (actualCardGO.transform.position.x < -0.75f) //Left
                     {
                         actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
                         actualCardCL.LeftText();
@@ -241,32 +239,33 @@ public class GameManager : MonoBehaviour
 
     bool endGameSession() {
         DateTime localTime = DateTime.Now;
-        timerTmp.text = ((hora - DateTime.Now.Hour) * 60 + minuto - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second);
-        //Debug.Log((((hora - DateTime.Now.Hour) * 60 + minuto - DateTime.Now.Minute) * 60 + (60 - DateTime.Now.Second)));
-        sliderTime.value = (((hora - DateTime.Now.Hour) * 60f + minuto - DateTime.Now.Minute)*60f + (60f - DateTime.Now.Second))/(minSesionDuration*60);
-        if (localTime.Year > año)
+        timerTmp.text = ((finishTime.Hour - DateTime.Now.Hour) * 60 + finishTime.Minute - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second);
+        //Debug.Log((((fisishTime.Hour - DateTime.Now.Hour) * 60 + fisishTime.Minute - DateTime.Now.Minute) * 60 + (60 - DateTime.Now.Second)));
+        sliderTime.value = (((finishTime.Hour - DateTime.Now.Hour) * 60f + finishTime.Minute - DateTime.Now.Minute)*60f + (60f - DateTime.Now.Second))/(minSesionDuration*60f);
+        Debug.Log(finishTime.Minute + " ," + DateTime.Now.Minute);
+        if (localTime.Year > finishTime.Year)
             return true;
-        else if (localTime.Year < año)
+        else if (localTime.Year < finishTime.Year)
             return false;
 
-        if (localTime.Month > mes)
+        if (localTime.Month > finishTime.Month)
             return true;
-        else if (localTime.Month < mes)
+        else if (localTime.Month < finishTime.Month)
             return false;
 
-        if (localTime.Day > dia)
+        if (localTime.Day > finishTime.Day)
             return true;
-        else if (localTime.Day < dia)
+        else if (localTime.Day < finishTime.Day)
             return false;
 
-        if (localTime.Hour > hora)
+        if (localTime.Hour > finishTime.Hour)
             return true;
-        else if (localTime.Hour < hora)
+        else if (localTime.Hour < finishTime.Hour)
             return false;
         
-        if (localTime.Minute > minuto)
+        if (localTime.Minute > finishTime.Minute)
             return true;
-        else if (localTime.Minute < minuto)
+        else if (localTime.Minute < finishTime.Minute)
             return false;
 
         return false;
@@ -275,7 +274,6 @@ public class GameManager : MonoBehaviour
     void sendGame() {
 
         userGame u = new userGame();
-        Debug.Log(u.email);
         RestClient.Post("https://caminodelemprendedor-7b0a7-default-rtdb.europe-west1.firebasedatabase.app/.json",u);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class CardLogic : MonoBehaviour
 {
     public Card card;
@@ -14,7 +15,9 @@ public class CardLogic : MonoBehaviour
     public TextMeshProUGUI tmpLeft;
     public TextMeshProUGUI tmpRight;
 
-    public bool isMouseOver = false;
+    public bool isMouseDown = false;
+
+    private Vector3 initLocalScale;
     void Start()
     {
         imgCard = GetComponent<SpriteRenderer>();
@@ -22,6 +25,7 @@ public class CardLogic : MonoBehaviour
         initCardPos = transform.position;
         imgCard.sprite = card.managerImg;
 
+        initLocalScale = gameObject.transform.localScale;
     }
 
     void Update()
@@ -32,7 +36,7 @@ public class CardLogic : MonoBehaviour
             initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         }
-        else if (Input.GetMouseButton(0) && isMouseOver)
+        else if (Input.GetMouseButton(0) && isMouseDown)
         {
             Vector2 dragPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = initCardPos - (initTouchPos - dragPos);
@@ -48,14 +52,22 @@ public class CardLogic : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
     }
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
-        isMouseOver = true;
+
     }
-    private void OnMouseExit()
+
+    private void OnMouseDown()
     {
-        isMouseOver = false;
+        isMouseDown = true;
+        gameObject.transform.localScale *= 1.10f;
+    }
+    private void OnMouseUp()
+    {
+
+        isMouseDown = false;
         initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        gameObject.transform.localScale = initLocalScale; 
     }
 
     //Texts
