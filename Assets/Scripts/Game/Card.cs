@@ -54,23 +54,23 @@ public class Card
         switch (manager)
         {
             case Manager.AYUDANTE:
-               return "Ayudante";
+               return "AYUDANTE";
             case Manager.CONTABLE:
-                return "Contable";
+                return "CONTABLE";
             case Manager.JEFE_DE_TIENDA:
-                return "Responsable de Tienda";
+                return "RESPONSABLE DE TIENDA";
             case Manager.ALDEANO:
-                return "Aldeano";
+                return "ALDEANO";
             case Manager.HOMBRE_MISTERIOSO:
-                return "Hombre Misterioso";
+                return "HOMBRE MISTERIOSO";
             case Manager.AVENTURERO:
-                return "Aventurero";
+                return "AVENTURERO";
             case Manager.LIQUIDO:
                 return "ITEM";
             case Manager.PISTOLA:
                 return "ITEM";
             case Manager.DEFAULT:
-                return "Persona";
+                return "PERSONA";
             default:
                 return "Un random ha aparecido!";
         }
