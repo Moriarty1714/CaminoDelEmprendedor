@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CardLogic : MonoBehaviour
@@ -18,6 +19,11 @@ public class CardLogic : MonoBehaviour
     public bool isMouseDown = false;
 
     private Vector3 initLocalScale;
+
+    //Tutorial
+    private GameObject mouseTutorial;
+    private Sprite initSprite;
+    private bool isTutorialActive;
     void Start()
     {
         imgCard = GetComponent<SpriteRenderer>();
@@ -26,26 +32,52 @@ public class CardLogic : MonoBehaviour
         imgCard.sprite = card.managerImg;
 
         initLocalScale = gameObject.transform.localScale;
+
+        mouseTutorial = GameObject.Find("Tutorial/TutorialPanel/Mouse");
+        isTutorialActive = true;
+
+        if (mouseTutorial != null)
+        {
+            initSprite = mouseTutorial.gameObject.GetComponent<Image>().sprite;
+        }
+        else
+        {
+            isTutorialActive = false;
+        }
+
     }
 
     void Update()
     {
-        //Movement
-        if (Input.GetMouseButtonDown(0))
-        {
-            initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        }
-        else if (Input.GetMouseButton(0) && isMouseDown)
-        {
-            Vector2 dragPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = initCardPos - (initTouchPos - dragPos);
+        if (isTutorialActive)
+        {           
+            if (initSprite != mouseTutorial.gameObject.GetComponent<Image>().sprite)
+            {
+                    Vector2 dragPos = mouseTutorial.gameObject.transform.position;
+                    transform.position = initCardPos - (initTouchPos - dragPos);
+            }
+            else initTouchPos = mouseTutorial.gameObject.transform.position;
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, initCardPos, fMovingSpeed);
+            //Movement
+            if (Input.GetMouseButtonDown(0))
+            {
+                initTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            }
+            else if (Input.GetMouseButton(0) && isMouseDown)
+            {
+                Vector2 dragPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                transform.position = initCardPos - (initTouchPos - dragPos);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, initCardPos, fMovingSpeed);
+            }
         }
 
+        //Angle
         float angle = (-20 * transform.position.x) / 1.5f;
         if (angle <= 20 && angle >= -20)
         {
@@ -59,6 +91,11 @@ public class CardLogic : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (isTutorialActive)
+        {
+            isTutorialActive = false;
+            Destroy(mouseTutorial.transform.parent.gameObject);
+        }
         isMouseDown = true;
         gameObject.transform.localScale *= 1.10f;
     }

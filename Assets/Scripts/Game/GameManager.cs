@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     public GameObject timeOutCanvas;
 
     bool endTimer = false;
+
+    //Tutorial:
+    public GameObject tutorialPanel;
+
     void Start()
     {
         cards = new Stack<Card>();
@@ -84,7 +88,7 @@ public class GameManager : MonoBehaviour
                     {
                         actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
                         actualCardCL.RightText();
-                        if (!Input.GetMouseButton(0))
+                        if (!Input.GetMouseButton(0)&&tutorialPanel==null)
                         {
                             UpdateAgents();
 
@@ -99,7 +103,7 @@ public class GameManager : MonoBehaviour
                     {
                         actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
                         actualCardCL.LeftText();
-                        if (!Input.GetMouseButton(0))
+                        if (!Input.GetMouseButton(0) && tutorialPanel == null)
                         {
                             UpdateAgents(true);
 
