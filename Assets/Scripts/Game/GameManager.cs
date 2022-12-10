@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
                     //Check direction
                     if (actualCardGO.transform.position.x > 0.75f) //Right
                     {
-                        actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
+                        actualCardGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true); //Degradado
                         actualCardCL.RightText();
                         if (!Input.GetMouseButton(0)&&tutorialPanel==null)
                         {
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                     }
                     else if (actualCardGO.transform.position.x < -0.75f) //Left
                     {
-                        actualCardCL.imgCard.color = new Color(0.4f, 0.4f, 0.4f);
+                        actualCardGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true); //Degradado
                         actualCardCL.LeftText();
                         if (!Input.GetMouseButton(0) && tutorialPanel == null)
                         {
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
                     }
                     else
                     {
-                        actualCardCL.imgCard.color = new Color(1f, 1f, 1f);
+                        actualCardGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(false); //Degradado
                         actualCardCL.NoneText();
                     }
                 }
