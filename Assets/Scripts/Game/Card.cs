@@ -100,4 +100,12 @@ public class Card
     }
 }
 
+public class CardAndDesicion {
+    Card card;
+    bool isLeftDesicion;
 
+    public CardAndDesicion(Card _card, bool _isLeftDesicion) {
+        card = _card;
+        isLeftDesicion = _isLeftDesicion;
+    }
+}

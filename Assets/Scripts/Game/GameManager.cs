@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite[] managersImg = new Sprite[9];
 
-    //Timer
+    //Timers
     public TextMeshProUGUI timerTmp;
     public int minSesionDuration;
     public DateTime finishTime;
@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public GameObject timeOutCanvas;
 
     bool endTimer = false;
+
+    private float lastDesicionTimer;
 
     //Tutorial:
     public GameObject tutorialPanel;
@@ -50,8 +52,9 @@ public class GameManager : MonoBehaviour
         generateStack();
         nCardsSliderValue = 0;
 
-        finishTime = DateTime.Now.AddMinutes(minSesionDuration);       
+        finishTime = DateTime.Now.AddMinutes(minSesionDuration);
 
+        lastDesicionTimer = Time.time;
     }
 
     // Update is called once per frame
@@ -93,6 +96,10 @@ public class GameManager : MonoBehaviour
                             UpdateAgents();
 
                             GameMemory.cardCount++;
+                            GameMemory.desicions.Enqueue(false);
+                            GameMemory.timeBetweenDesicion.Enqueue(Time.time - lastDesicionTimer);
+                            lastDesicionTimer = Time.time;
+
                             Destroy(actualCardGO);
 
                             nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
@@ -108,6 +115,10 @@ public class GameManager : MonoBehaviour
                             UpdateAgents(true);
 
                             GameMemory.cardCount++;
+                            GameMemory.desicions.Enqueue(true);
+                            GameMemory.timeBetweenDesicion.Enqueue(Time.time - lastDesicionTimer);
+                            lastDesicionTimer = Time.time;
+
                             Destroy(actualCardGO);
 
                             nCardsSliderValue = (float)GameMemory.cardCount / (float)GameMemory.totalCards;
@@ -242,10 +253,12 @@ public class GameManager : MonoBehaviour
 
     bool endGameSession() {
         DateTime localTime = DateTime.Now;
-        timerTmp.text = ((finishTime.Hour - DateTime.Now.Hour) * 60 + finishTime.Minute - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second);
-        //Debug.Log((((fisishTime.Hour - DateTime.Now.Hour) * 60 + fisishTime.Minute - DateTime.Now.Minute) * 60 + (60 - DateTime.Now.Second)));
+        timerTmp.text = ((finishTime.Hour - DateTime.Now.Hour) * 60 + finishTime.Minute - DateTime.Now.Minute).ToString() + ":" + (60 - DateTime.Now.Second).ToString();
         sliderTime.value = (((finishTime.Hour - DateTime.Now.Hour) * 60f + finishTime.Minute - DateTime.Now.Minute)*60f + (60f - DateTime.Now.Second))/(minSesionDuration*60f);
-        Debug.Log(finishTime.Minute + " ," + DateTime.Now.Minute);
+
+
+        GameMemory.timerPartida = (minSesionDuration * 60) - (((finishTime.Hour - DateTime.Now.Hour) * 60 + finishTime.Minute - DateTime.Now.Minute) * 60 + (60 - DateTime.Now.Second));
+
         if (localTime.Year > finishTime.Year)
             return true;
         else if (localTime.Year < finishTime.Year)

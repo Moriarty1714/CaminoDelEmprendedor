@@ -16,8 +16,10 @@ public static class GameMemory
     public static bool gamePassed = false;
 
     //Desicions
-    //public static Queue<CardAndDesicion> desicions = new Queue<CardAndDesicion>();
+    public static Queue<bool> desicions = new Queue<bool>();
 
+    public static Queue<float> timeBetweenDesicion = new Queue<float>();
+    public static float timerPartida;
 }
 public class userGame{
     public string userName;
@@ -28,6 +30,11 @@ public class userGame{
 
     public int cardCount = 0;
     public bool gamePassed = false;
+
+    public float[] timeBetweenDesicion;
+    public float timerPartida;
+
+    public bool[] desicions;
 
     public userGame() {
         userName = GameMemory.userName;
@@ -40,5 +47,10 @@ public class userGame{
 
         cardCount = GameMemory.cardCount;
         gamePassed = GameMemory.gamePassed;
+
+        timeBetweenDesicion = GameMemory.timeBetweenDesicion.ToArray();
+        timerPartida = GameMemory.timerPartida;
+
+        desicions = GameMemory.desicions.ToArray();
     }
 }
