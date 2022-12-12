@@ -8,7 +8,6 @@ using TMPro;
 public class MainMenu : MonoBehaviour
 {
     public Image ludensLogo;
-    public Image acehLogo;
     public Image splashScreenPanel;
     
     public GameObject dataPlayerPanel;
@@ -20,9 +19,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         StartCoroutine(FadeImage(ludensLogo,0, false));
-        StartCoroutine(FadeImage(acehLogo, 0, false));
         StartCoroutine(FadeImage(ludensLogo, 2, true));
-        StartCoroutine(FadeImage(acehLogo, 2, true));
         StartCoroutine(FadeImage(splashScreenPanel,3, true));
     }
 
