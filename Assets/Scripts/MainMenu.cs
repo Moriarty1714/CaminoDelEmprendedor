@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
         else
             GameMemory.business = "UnknowedSL";
 
-        dataPlayerPanel.SetActive(false);
+        Destroy(dataPlayerPanel);
     }
 
     public void sceneGame() {

@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
 
                             GameMemory.cardCount++;
                             GameMemory.desicions.Enqueue(false);
+                            Debug.Log(GameMemory.desicions.Count);
                             GameMemory.timeBetweenDesicion.Enqueue(Time.time - lastDesicionTimer);
                             lastDesicionTimer = Time.time;
 
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
 
                             GameMemory.cardCount++;
                             GameMemory.desicions.Enqueue(true);
+                            Debug.Log(GameMemory.desicions.Count);
                             GameMemory.timeBetweenDesicion.Enqueue(Time.time - lastDesicionTimer);
                             lastDesicionTimer = Time.time;
 
