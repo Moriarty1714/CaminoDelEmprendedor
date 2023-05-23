@@ -985,7 +985,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a7e225e4df7d2944aad9125e1a27390c, type: 3}
   - {fileID: 21300000, guid: 8071fb927ed7a3544a8df88dd5e58ea0, type: 3}
   timerTmp: {fileID: 786270579}
-  minSesionDuration: 20
+  minSesionDuration: 3
   sliderTime: {fileID: 1341815915}
   timeOutCanvas: {fileID: 600353173}
   tutorialPanel: {fileID: 635029792}
